@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>BuildWatch AI Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#020617,
+#0f172a,
+#1e293b
+);
+
+color:white;
+
+padding:30px;
+
+min-height:100vh;
+
+}
+
+/* HEADER */
+
+.header{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.header h1{
+
+font-size:52px;
+
+font-weight:700;
+
+background:linear-gradient(
+90deg,
+#38bdf8,
+#2563eb
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.header p{
+
+color:#94a3b8;
+
+font-size:18px;
+
+margin-top:10px;
+
+}
+
+/* STATUS BAR */
+
+.status{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin-bottom:35px;
+
+}
+
+.status-box{
+
+background:rgba(255,255,255,0.05);
+
+padding:12px 20px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,0.08);
+
+color:#22c55e;
+
+font-size:14px;
+
+font-weight:500;
+
+}
+
+/* CARDS */
+
+.cards{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+margin-bottom:40px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,0.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+width:250px;
+
+padding:30px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:
+0 0 20px rgba(37,99,235,0.2),
+0 0 40px rgba(37,99,235,0.08);
+
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 0 30px rgba(56,189,248,0.35),
+0 0 60px rgba(56,189,248,0.15);
+
+}
+
+.card h2{
+
+font-size:42px;
+
+margin-bottom:10px;
+
+background:linear-gradient(
+90deg,
+#38bdf8,
+#2563eb
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.card p{
+
+color:#cbd5e1;
+
+font-size:15px;
+
+}
+
+/* IMAGE GRID */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(420px,1fr));
+
+gap:25px;
+
+}
+
+.panel{
+
+background:rgba(255,255,255,0.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+padding:18px;
+
+border-radius:22px;
+
+box-shadow:
+0 0 20px rgba(255,255,255,0.03);
+
+transition:0.3s;
+
+}
+
+.panel:hover{
+
+transform:scale(1.02);
+
+}
+
+.panel h3{
+
+text-align:center;
+
+margin-bottom:15px;
+
+font-size:18px;
+
+color:#e2e8f0;
+
+}
+
+.panel img{
+
+width:100%;
+
+border-radius:15px;
+
+}
+
+/* AI ASSESSMENT */
+
+.assessment{
+
+margin-top:35px;
+
+background:rgba(255,255,255,0.05);
+
+backdrop-filter:blur(20px);
+
+padding:30px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 0 25px rgba(37,99,235,0.12);
+
+}
+
+.assessment h2{
+
+color:#38bdf8;
+
+margin-bottom:15px;
+
+font-size:28px;
+
+}
+
+.assessment p{
+
+line-height:1.8;
+
+color:#cbd5e1;
+
+}
+
+/* WORKFLOW */
+
+.workflow{
+
+margin-top:30px;
+
+background:rgba(255,255,255,0.05);
+
+padding:25px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,0.08);
+
+}
+
+.workflow h2{
+
+color:#38bdf8;
+
+margin-bottom:15px;
+
+}
+
+.workflow p{
+
+line-height:2;
+
+color:#cbd5e1;
+
+}
+
+/* BUTTON */
+
+.btn{
+
+display:block;
+
+width:280px;
+
+margin:35px auto;
+
+padding:18px;
+
+text-align:center;
+
+text-decoration:none;
+
+border-radius:15px;
+
+font-weight:600;
+
+font-size:17px;
+
+background:linear-gradient(
+90deg,
+#2563eb,
+#06b6d4
+);
+
+color:white;
+
+transition:0.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 0 25px rgba(56,189,248,0.4);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>🛰 BuildWatch AI</h1>
+
+<p>
+Urban Construction Intelligence Platform
+</p>
+
+</div>
+
+<div class="status">
+
+<div class="status-box">
+🟢 Satellite Feed Connected
+</div>
+
+<div class="status-box">
+🟢 AI Engine Active
+</div>
+
+<div class="status-box">
+🟢 Change Detection Complete
+</div>
+
+<div class="status-box">
+🟢 Risk Assessment Generated
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h2>{{ confidence }}%</h2>
+<p>Confidence Score</p>
+</div>
+
+<div class="card">
+<h2>{{ regions }}</h2>
+<p>Detected Regions</p>
+</div>
+
+<div class="card">
+<h2>{{ risk }}</h2>
+<p>Risk Level</p>
+</div>
+
+<div class="card">
+<h2>AI</h2>
+<p>Monitoring Active</p>
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="panel">
+<h3>📸 Historical Image</h3>
+<img src="/static/before.jpg">
+</div>
+
+<div class="panel">
+<h3>🛰 Current Image</h3>
+<img src="/static/after.jpg">
+</div>
+
+<div class="panel">
+<h3>🎯 Detected Changes</h3>
+<img src="/static/result.jpg">
+</div>
+
+<div class="panel">
+<h3>⚫ Difference Mask</h3>
+<img src="/static/mask.jpg">
+</div>
+
+<div class="panel">
+<h3>🔥 Change Heatmap</h3>
+<img src="/static/heatmap.jpg">
+</div>
+
+</div>
+
+<div class="assessment">
+
+<h2>🤖 AI Assessment</h2>
+
+<p>
+
+The system analyzed historical and current satellite imagery to identify structural variations and suspicious land development activities.
+
+Detected regions were processed using computer vision techniques, difference masking, heatmap generation, and AI-assisted object analysis.
+
+The highlighted zones indicate potential unauthorized construction requiring verification by relevant authorities.
+
+</p>
+
+<br>
+
+<p>
+
+<b>Recommended Action:</b>
+Conduct field inspection and regulatory compliance verification of the identified regions.
+
+</p>
+
+</div>
+
+<div class="workflow">
+
+<h2>⚙ System Workflow</h2>
+
+<p>
+
+📸 Historical Satellite Image
+
+<br>⬇<br>
+
+🛰 Current Satellite Image
+
+<br>⬇<br>
+
+🧠 Image Processing & Analysis
+
+<br>⬇<br>
+
+🎯 Change Detection
+
+<br>⬇<br>
+
+🔥 Heatmap Generation
+
+<br>⬇<br>
+
+⚠ Risk Assessment
+
+<br>⬇<br>
+
+📊 Smart Monitoring Dashboard
+
+</p>
+
+</div>
+
+<a href="/" class="btn">
+🚀 Run Another Analysis
+</a>
+
+</body>
+
+</html>

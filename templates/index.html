@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>BuildWatch AI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#020617,#0f172a,#1e293b);
+overflow:hidden;
+}
+
+.card{
+
+width:600px;
+padding:45px;
+
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,0.15);
+
+border-radius:25px;
+
+box-shadow:0 0 40px rgba(37,99,235,0.25);
+
+text-align:center;
+}
+
+.logo{
+
+font-size:60px;
+margin-bottom:10px;
+
+}
+
+h1{
+
+color:white;
+font-size:42px;
+font-weight:700;
+
+}
+
+.subtitle{
+
+color:#cbd5e1;
+margin-top:10px;
+margin-bottom:35px;
+
+}
+
+.upload{
+
+background:rgba(255,255,255,0.08);
+
+padding:18px;
+
+border-radius:15px;
+
+margin-bottom:20px;
+
+}
+
+label{
+
+display:block;
+color:white;
+margin-bottom:8px;
+font-weight:500;
+
+}
+
+input{
+
+color:white;
+
+}
+
+button{
+
+margin-top:20px;
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+border-radius:15px;
+
+background:linear-gradient(
+90deg,
+#2563eb,
+#06b6d4
+);
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 30px rgba(37,99,235,0.4);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">🏗️</div>
+
+<h1>BuildWatch AI</h1>
+
+<p class="subtitle">
+Unauthorized Construction Monitoring Platform
+</p>
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+
+<div class="upload">
+<label>📸 Historical Image</label>
+<input type="file" name="before" required>
+</div>
+
+<div class="upload">
+<label>🛰 Current Image</label>
+<input type="file" name="after" required>
+</div>
+
+<button>
+🚀 Launch AI Analysis
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
