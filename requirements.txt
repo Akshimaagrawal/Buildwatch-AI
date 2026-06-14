@@ -2,6 +2,5 @@ flask
 opencv-python-headless
 numpy
 ultralytics
-torch
-torchvision
-pillow
+matplotlib
+gunicorn
